@@ -21,7 +21,7 @@ HEROKU_API_KEY = getenv("HEROKU_API_KEY")
 HEROKU_APP_NAME = getenv("HEROKU_APP_NAME")
 
 UPSTREAM_REPO = getenv(
-    "UPSTREAM_REPO", "https://github.com/ruhsuzbey/yokki"
+    "UPSTREAM_REPO", "https://github.com/Ruhsuzbey/yokki"
 )
 UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "master")
 
