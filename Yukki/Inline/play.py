@@ -13,11 +13,11 @@ def url_markup(videoid, duration, user_id, query, query_type):
             ),
             InlineKeyboardButton(
                 text="🎵",
-                callback_data=f"MusicStream {videoid}|{duration}|{user_id}",
+                callback_data=f"MusicOynatılıyor {videoid}|{duration}|{user_id}",
             ),
             InlineKeyboardButton(
                 text="🎥",
-                callback_data=f"Choose {videoid}|{duration}|{user_id}",
+                callback_data=f"video {videoid}|{duration}|{user_id}",
             ),
             InlineKeyboardButton(
                 text="▶️",
@@ -27,7 +27,7 @@ def url_markup(videoid, duration, user_id, query, query_type):
         [
             InlineKeyboardButton(
                 text="🔎 Daha Fazlası",
-                callback_data=f"Search {query}|{user_id}",
+                callback_data=f"Arıyor {query}|{user_id}",
             ),
             InlineKeyboardButton(
                 text="🗑 Aramayı kapat",
@@ -47,7 +47,7 @@ def url_markup2(videoid, duration, user_id):
             ),
             InlineKeyboardButton(
                 text="🎥 Video oynatılıyor",
-                callback_data=f"Choose {videoid}|{duration}|{user_id}",
+                callback_data=f"sıradaki {videoid}|{duration}|{user_id}",
             ),
         ],
         [
