@@ -61,13 +61,13 @@ async def play(_, message: Message):
     url = get_url(message)
     if audio:
         mystic = await message.reply_text(
-            "🔄 Processing Audio... Please Wait!"
+            "♻️ ses indiriliyor Bekleyin!"
         )
         try:
             read = db_mem[message.chat.id]["live_check"]
             if read:
                 return await mystic.edit(
-                    "Live Streaming Playing...Stop it to play music"
+                    "Canĺı akış oynatılıyor...Stop it to play music"
                 )
             else:
                 pass
@@ -122,7 +122,7 @@ async def play(_, message: Message):
                     "Sorry! Bot only allows limited number of video calls due to CPU overload issues. Many other chats are using video call right now. Try switching to audio or try again later"
                 )
         mystic = await message.reply_text(
-            "🔄 Processing Video... Please Wait!"
+            "♻️Video... bekleyin!"
         )
         try:
             read = db_mem[message.chat.id]["live_check"]
@@ -142,7 +142,7 @@ async def play(_, message: Message):
             mystic,
         )
     elif url:
-        mystic = await message.reply_text("🔄 Processing URL... Please Wait!")
+        mystic = await message.reply_text("♻️link alınıyor... bekleyin!")
         if not message.reply_to_message:
             query = message.text.split(None, 1)[1]
         else:
@@ -158,7 +158,7 @@ async def play(_, message: Message):
         buttons = url_markup2(videoid, duration_min, message.from_user.id)
         return await message.reply_photo(
             photo=thumb,
-            caption=f"📎Title: **{title}\n\n⏳Duration:** {duration_min} Mins\n\n__[Get Additional Information About Video](https://t.me/{BOT_USERNAME}?start=info_{videoid})__",
+            caption=f"📎parça: **{title}\n\n⏳süre:** {duration_min} Mins\n\n__[parca detayları](https://t.me/{BOT_USERNAME}?start=info_{videoid})__",
             reply_markup=InlineKeyboardMarkup(buttons),
         )
     else:
@@ -169,12 +169,12 @@ async def play(_, message: Message):
             await message.reply_photo(
                 photo="Utils/Playlist.jpg",
                 caption=(
-                    "**Usage:** /play [Music Name or Youtube Link or Reply to Audio]\n\nIf you want to play Playlists! Select the one from Below."
+                    "**isteyen** /play [Music Name or Youtube Link or Reply to Audio]\n\nIf you want to play Playlists! Select the one from Below."
                 ),
                 reply_markup=InlineKeyboardMarkup(buttons),
             )
             return
-        mystic = await message.reply_text("🔍 **Searching**...")
+        mystic = await message.reply_text("🔍 **aranıyor**...")
         query = message.text.split(None, 1)[1]
         (
             title,
@@ -189,7 +189,7 @@ async def play(_, message: Message):
         )
         return await message.reply_photo(
             photo=thumb,
-            caption=f"📎Title: **{title}\n\n⏳Duration:** {duration_min} Mins\n\n__[Get Additional Information About Video](https://t.me/{BOT_USERNAME}?start=info_{videoid})__",
+            caption=f"📎parça: **{title}\n\n⏳süresi:** {duration_min} Mins\n\n__[parça detayları](https://t.me/{BOT_USERNAME}?start=info_{videoid})__",
             reply_markup=InlineKeyboardMarkup(buttons),
         )
 
